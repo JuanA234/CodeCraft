@@ -29,14 +29,14 @@ class lexer(object):
                 if word[len(word)-1] == ";":
                     tokens.append(['Identificador', word[0:len(word)-1]])
                 else:
-                    tokens.append(['Identificador', word])
+                    tokens.append(['Identificador', word]) #aclarar
             
             #Reconocera un entero y creara un indentificador para este mismo
             elif re.match('[0-9]', word):
                 if word[len(word)-1] == ";":
                     tokens.append(['Entero', word[0:len(word)-1]])
                 else:
-                    tokens.append(['Entero', word])
+                    tokens.append(['Entero', word]) #aclarar
             
             ##Reconocera un operador y creara un indentificador para este mismo
             elif word in "=/*=-+":
