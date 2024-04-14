@@ -1,4 +1,6 @@
 import re
+conditionals = ["si", "sino", "contrario"]
+logicOperators = ["interruptor", "puerta", "cierre"]
 
 class lexer(object):
 
@@ -23,13 +25,41 @@ class lexer(object):
             #Esto va a reconocer una variable y crear un token para ella
             if word == "bloque": 
                 tokens.append(["DeclaracionEntero", word])
-
+            
+            elif word == "hiloRedstone":
+                tokens.append(["DeclaracionString", word])
+            
+            elif word == "pasoHelado":
+                 tokens.append(["DeclaracionFloat", word])
+                
+            elif word == "booleanman":
+                tokens.append(["DeclaracionBoolean", word])
+            
+            elif word in conditionals:
+                tokens.append(["Condicional", word])
+            
+            elif word in logicOperators:
+                tokens.append(["OperadorLogico", word])
+            
+            elif word == "minarPara":
+                tokens.append(["CicloFor", word])
+            
+            elif word == "mientrasNoDiamante":
+                tokens.append(["CicloWhile", word])
+            
+            elif word == "picoRoto":
+                tokens.append(["palabraReservadaPicoRoto", word])
+            
+            elif word == "seguirPicando":
+                tokens.append(["palabraReservadaPicoRotoSeguitPicando", word])
+    
             #Reconocera una palabra y creara un indentificador para esta misma
             elif re.match('[a-z]', word) or re.match('[A-Z]', word):
                 if word[len(word)-1] == ";":
                     tokens.append(['Identificador', word[0:len(word)-1]])
                 else:
                     tokens.append(['Identificador', word])
+            
             
             #Reconocera un entero y creara un indentificador para este mismo
             elif re.match('[0-9]', word):
