@@ -1,6 +1,7 @@
 import src.lexer as lexer
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)  # Aplica CORS a toda la aplicación
@@ -25,8 +26,8 @@ def main():
     #Llamamos la clase lexer y lo inicializamos con el codigo fuente
     lex = lexer.lexer(content)
     #Ahora  llamamos al metodo "tokenize"
-    tokens = lex.tokenize()
-    return jsonify({'tokens': tokens})
+    tokens = lex.tokenize(content)
+    return json.dumps(tokens)
     #return tokens
 
 #main()
