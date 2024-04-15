@@ -3,7 +3,7 @@ const inputBox = document.getElementById("code-box");
 inputBox.addEventListener('change', () =>{
     const content = inputBox.value;
 
-    fetch('https://codecraftbackend-ohlf.onrender.com', {
+    fetch('https://codecraftbackend-ohlf.onrender.com/lexer', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ inputBox.addEventListener('change', () =>{
     })
     .then(response => response.json())
     .then(data=>{
-        console.log('Tokens', data.tokens);
+        console.log('Tokens', data);
     })
     .catch(error=>{
         console.error('Error al tokenizar las palabras: ', error)

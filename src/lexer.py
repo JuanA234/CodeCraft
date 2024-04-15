@@ -81,4 +81,7 @@ class lexer(object):
         print(tokens)
 
         #Retorna los tokens creados
-        return tokens
+        token_dict = {}
+        for index, token in enumerate(tokens):
+            token_dict[index] = {"token": token.type, "value": token.value}
+        return token_dict
