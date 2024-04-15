@@ -1,9 +1,13 @@
 import lexer
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)  # Aplica CORS a toda la aplicación
+
+@app.route('/')
+def start():
+    return render_template('index.html')
 
 @app.route('/lexer', methods=['POST'])
 def main(): 
