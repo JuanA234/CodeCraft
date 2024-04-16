@@ -2,7 +2,9 @@ const inputBox = document.getElementById("code-box");
 
 inputBox.addEventListener('change', () =>{
     const content = inputBox.value;
-
+    console.log(content);
+//'http://localhost:5000/lexer'
+//'https://codecraftbackend-ohlf.onrender.com/lexer'
     fetch('https://codecraftbackend-ohlf.onrender.com/lexer', {
         method: 'POST',
         headers: {

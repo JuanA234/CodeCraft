@@ -24,9 +24,9 @@ def main():
     
    #lexer
     #Llamamos la clase lexer y lo inicializamos con el codigo fuente
-    lex = lexer.lexer(content)
+    lex = lexer.Lexer(content)
     #Ahora  llamamos al metodo "tokenize"
-    tokens = lex.tokenize(content)
+    tokens = lex.tokenize()
     return json.dumps(tokens)
     #return tokens
 
