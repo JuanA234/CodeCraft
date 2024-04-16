@@ -1,8 +1,8 @@
 const inputBox = document.getElementById("code-box");
 
-inputBox.addEventListener('change', () =>{
+
+document.getElementById("btnEnviar").addEventListener('click', () =>{
     const content = inputBox.value;
-    console.log(content);
 //'http://localhost:5000/lexer'
 //'https://codecraftbackend-ohlf.onrender.com/lexer'
     fetch('https://codecraftbackend-ohlf.onrender.com/lexer', {
@@ -17,6 +17,8 @@ inputBox.addEventListener('change', () =>{
     .then(response => response.json())
     .then(data=>{
         console.log('Tokens', data);
+        const outputArea = document.getElementById('output-area');
+        outputArea.value = JSON.stringify(data); // Aquí se establece el contenido del textarea
     })
     .catch(error=>{
         console.error('Error al tokenizar las palabras: ', error)
