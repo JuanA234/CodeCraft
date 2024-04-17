@@ -7,13 +7,6 @@ const conditionals = {
 }
 
 
-const operators = {
-    "craftear":"sum",
-    "desgastar":"substraction",
-    "encantar":"multiplication",
-    "desencantar":"division",
-    "residuo":"module"
-}
 
 const variableType = {
     "bloque":"integer",
