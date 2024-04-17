@@ -5,7 +5,7 @@ document.getElementById("btnEnviar").addEventListener('click', () =>{
     const content = inputBox.value;
 //'http://localhost:5000/lexer'
 //'https://codecraftbackend-ohlf.onrender.com/lexer'
-    fetch('http://localhost:5000/lexer', {
+    fetch('https://codecraftbackend-ohlf.onrender.com/lexer', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
